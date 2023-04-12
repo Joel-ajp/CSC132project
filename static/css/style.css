@@ -47,6 +47,7 @@ nav {
 nav a {
   color: white;
   margin: 0 1rem;
+  align-self:auto;
 }
 
 nav a:hover {
