@@ -15,8 +15,6 @@ from multiprocessing import Process
 
 i2c_bus = board.I2C()  # uses board.SCL and board.SDA
 
-# i2c_bus = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
-
 ss = Seesaw(i2c_bus, addr=0x36)
 
 
@@ -95,9 +93,8 @@ def getMoisTemp():
 
 # A function to run the app
 def run_app():
-    app.run(debug=False)
+    app.run(debug=False,host=HOST,port=PORT)
 
 # To run the app
 if __name__ == "__main__":
     parallelize_functions(getMoisTemp, run_app)
-    # app.run(host=HOST,port=PORT,debug=DEBUG)
