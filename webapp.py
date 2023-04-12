@@ -82,8 +82,10 @@ def getMoisTemp():
         # read temperature from the temperature sensor
         temp = ss.get_temp()
 
-        # Adds the data to a dictonary
+        # Adds the data to a dictonary and assigns the new data to the graph
         tempData.append((current_time, temp))
+        temperaturePageIndex()
+
         moisData.append((current_time, mois))
 
         # Prints the data 
