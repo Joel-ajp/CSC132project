@@ -27,7 +27,8 @@ PORT = 1234
 DEBUG = True
 
 # Variables for the different plant variables
-tempData = {}
+tempData = []
+moisData = []
 
 # instantiates the app
 app = Flask(__name__)
@@ -54,8 +55,6 @@ def lightPageIndex():
     return render_template("light.html")
 
 
-
-
 # The code to get and display the soil moisture and temperature data.
 
 i2c_bus = board.I2C()  # uses board.SCL and board.SDA
@@ -73,18 +72,18 @@ def getMoisTemp():
         current_time = time.strftime("%H:%M:%S", t)
 
         # Reads the current moisture from the sensor
-        touch = ss.moisture_read()
+        mois = ss.moisture_read()
 
         # read temperature from the temperature sensor
         temp = ss.get_temp()
 
         # Adds the data to a dictonary
-        tempData[current_time] = temp 
+        tempData.append((current_time, temp))
+        moisData.append((current_time, mois))
 
         # Prints the data 
-        print("temp: " + tempData + "  moisture: " + str(touch))
+        print("temp: " + str(tempData) + "  moisture: " + str(moisData))
         time.sleep(30)
-
 
 
 # A function to run the app
