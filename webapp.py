@@ -42,7 +42,11 @@ def landingPageIndex():
 @app.route("/temp")
 def temperaturePageIndex():
     data = tempData
-    return render_template("temp.html")
+
+    labels = [row[0] for row in data]
+    values = [row[1] for row in data]
+
+    return render_template("temp.html", labels=labels, values=values)
 
 # Moisture page function
 @app.route("/moisture")
