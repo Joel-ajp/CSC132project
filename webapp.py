@@ -26,6 +26,10 @@ HOST = "localhost"
 PORT = 1234
 DEBUG = True
 
+# Variables for the different plant variables
+tempData = {}
+
+# instantiates the app
 app = Flask(__name__)
 
 # Landing page function
@@ -36,6 +40,7 @@ def landingPageIndex():
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
+    data = tempData
     return render_template("temp.html")
 
 # Moisture page function
@@ -61,14 +66,24 @@ ss = Seesaw(i2c_bus, addr=0x36)
 
 # A function that gets the temperature of the plant perpetually
 def getMoisTemp():
-    touch = ss.moisture_read()
+    while True:
 
-    # read temperature from the temperature sensor
-    temp = ss.get_temp()
+        # Gets the current time in the proper format
+        t = time.localtime()
+        current_time = time.strftime("%H:%M:%S", t)
 
-    # Prints the data 
-    print("temp: " + str(temp) + "  moisture: " + str(touch))
-    time.sleep(1)
+        # Reads the current moisture from the sensor
+        touch = ss.moisture_read()
+
+        # read temperature from the temperature sensor
+        temp = ss.get_temp()
+
+        # Adds the data to a dictonary
+        tempData[current_time] = temp 
+
+        # Prints the data 
+        print("temp: " + tempData + "  moisture: " + str(touch))
+        time.sleep(30)
 
 
 
@@ -78,5 +93,5 @@ def run_app():
 
 # To run the app
 if __name__ == "__main__":
-    # parallelize_functions(getMoisTemp, run_app)
-    app.run(host=HOST,port=PORT,debug=DEBUG)
+    parallelize_functions(getMoisTemp, run_app)
+    # app.run(host=HOST,port=PORT,debug=DEBUG)
