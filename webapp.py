@@ -11,6 +11,15 @@ import board
 from adafruit_seesaw.seesaw import Seesaw
 from multiprocessing import Process
 
+# The code to get and display the soil moisture and temperature data.
+
+i2c_bus = board.I2C()  # uses board.SCL and board.SDA
+
+# i2c_bus = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
+
+ss = Seesaw(i2c_bus, addr=0x36)
+
+
 # Helper function to easly  parallelize multiple functions
 def parallelize_functions(*functions):
     processes = []
@@ -58,14 +67,6 @@ def moisturePageIndex():
 def lightPageIndex():
     return render_template("light.html")
 
-
-# The code to get and display the soil moisture and temperature data.
-
-i2c_bus = board.I2C()  # uses board.SCL and board.SDA
-
-# i2c_bus = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
-
-ss = Seesaw(i2c_bus, addr=0x36)
 
 # A function that gets the temperature of the plant perpetually
 def getMoisTemp():
