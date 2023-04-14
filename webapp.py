@@ -7,15 +7,15 @@
 from flask import Flask, render_template
 import json
 import time
-import board
+#import board
 from adafruit_seesaw.seesaw import Seesaw
 from multiprocessing import Process
 
 # The code to get and display the soil moisture and temperature data.
 
-i2c_bus = board.I2C()  # uses board.SCL and board.SDA
+#i2c_bus = board.I2C()  # uses board.SCL and board.SDA
 
-ss = Seesaw(i2c_bus, addr=0x36)
+#ss = Seesaw(i2c_bus, addr=0x36)
 
 
 # Helper function to easly  parallelize multiple functions
@@ -48,8 +48,16 @@ def landingPageIndex():
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
-    data = tempData
+    # data = tempData
 
+    data = [
+        (123,123),
+        (123,123),
+        (123,123),
+        (123,123),
+        (123,123),
+
+    ]
     labels = [row[0] for row in data]
     values = [row[1] for row in data]
 
@@ -75,10 +83,12 @@ def getMoisTemp():
         current_time = time.strftime("%H:%M:%S", t)
 
         # Reads the current moisture from the sensor
-        mois = ss.moisture_read()
+        # mois = ss.moisture_read()
+        mois = 0
 
         # read temperature from the temperature sensor
-        temp = ss.get_temp()
+        # temp = ss.get_temp()
+        temp = 0
 
         # Adds the data to a dictonary and assigns the new data to the graph
         tempData.append((current_time, temp))
