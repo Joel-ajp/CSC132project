@@ -52,9 +52,9 @@ def temperaturePageIndex():
 
     data = [
         (123,123),
-        (123,123),
-        (123,123),
-        (123,123),
+        (123,13),
+        (123,50),
+        (150,23),
         (123,123),
 
     ]
@@ -103,8 +103,9 @@ def getMoisTemp():
 
 # A function to run the app
 def run_app():
-    app.run(debug=False,host=HOST,port=PORT)
+    app.run(debug=DEBUG,host=HOST,port=PORT)
 
 # To run the app
 if __name__ == "__main__":
-    parallelize_functions(getMoisTemp, run_app)
+    # parallelize_functions(getMoisTemp, run_app)
+    app.run(host=HOST,port=PORT,debug=DEBUG)
