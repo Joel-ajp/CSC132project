@@ -69,9 +69,9 @@ def moisturePageIndex():
     return render_template("moisture.html")
 
 # Light page function
-@app.route("/light")
+@app.route("/garden")
 def lightPageIndex():
-    return render_template("light.html")
+    return render_template("garden.html")
 
 
 # A function that gets the temperature of the plant perpetually
