@@ -40,8 +40,32 @@
                             }
                         ]
                     }
-                    });
-            </script>
+                });
+                let values = {{values}};
+                let labels = {{labels}};
+                setInterval(()=> {
+                    values.push(Math.floor(Math.random() * 125))
+                    labels.push(Math.floor(Math.random() * 125))
+                    // values = [125]
+                    console.log(values)
+                    lineChart.destroy()
+                    lineChart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "Temperature (In Celcius)",
+                                data: values ,
+                                fill: false,
+                                borderColor: "rgb(116, 140, 91)",
+                                lineTension: 0.5
+                            }
+                        ]
+                    }
+                })
+            }, 2000);
+                </script>
 
         <h1>
             Your Garden:
