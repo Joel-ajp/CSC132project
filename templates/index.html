@@ -38,7 +38,8 @@
 </body>
 
 <script>
-    //Gets the modal element
+
+//Gets the modal element
 let modal = document.getElementById("myModal");
 
 //Gets the savePlantData elemt
@@ -68,10 +69,12 @@ if (event.target == modal) {
 // Function to save the data of the plant 
 function saveData() {
 let data = {
-   name: "John Doe",
-   email: "johndoe@example.com",
-   age: 30
+    name: "Snake plant",
+    tempLow: "John Doe",
+    email: "johndoe@example.com",
+    age: 30
 };
 localStorage.setItem("myData", JSON.stringify(data));
 }
+
 </script>
