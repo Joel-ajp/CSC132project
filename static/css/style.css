@@ -36,6 +36,11 @@ a {
   text-decoration: none;
 }
 
+.gardenPlantStyle {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
 /* Navigation Styles */
 nav {
   background-color: var(--primary-color);
