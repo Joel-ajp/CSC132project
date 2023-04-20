@@ -23,8 +23,6 @@ const PLANTS = [{
 //Gets the modal element
 let modal = document.getElementById("myModal");
 
-//Gets the savePlantData elemt
-
 //Gets the btn class
 let btn = document.getElementsByClassName("btn")[0];
 
