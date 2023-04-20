@@ -21,12 +21,17 @@ const PLANTS = [{
 }]
 
 // Function to save the data of the plant 
-function addToGarden() {
-let data = {
-    plantName: document.getElementById("plantName").innerHTML,
-    minTemp: document.getElementById("minTemp").innerHTML,
-    maxTemp: document.getElementById("maxTemp").innerHTML,
-    soilMois: document.getElementById("soilMois").innerHTML
-};
-localStorage.setItem("myData", JSON.stringify(data));
+function addToGarden(id) {
+    let current = PLANTS.filter(e => e.id == id)[0]
+    console.log(current["name"])
+    let data = JSON.parse(localStorage.getItem("myData")) ? JSON.parse(localStorage.getItem("myData")) : [];
+
+    data.push({
+        plantName: current["name"],
+        minTemp: current["minTemp"],
+        maxTemp: current["maxTemp"],
+        soilMois: current["soilMois"]
+    });
+    
+    localStorage.setItem("myData", JSON.stringify(data));
 }

@@ -10,7 +10,7 @@ function renderPlants(){
             <h4>${plant.name}</h4>
             <p>${plant.partDes}</p>
             <button class="btn", onclick="openModal(${plant.name})">Details</button>
-            <button class="btn", id="savePlantData", onclick="addToGarden()">Add to Garden</button>
+            <button class="btn", id="savePlantData", onclick="addToGarden(${plant.id})">Add to Garden</button>
           </div>
 
           <div id="${plant.name}" class="modal">
