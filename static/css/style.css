@@ -54,6 +54,12 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.breaker{
+  color : red;
+  border : 1px solid green;
+  margin-bottom : 5px;
+}
+
 /* Button Styles */
 .btn {
   background-color: var(--primary-color);
@@ -79,6 +85,7 @@ nav a:hover {
   margin: 1rem;
   padding: 1rem;
   width: 300px;
+
 }
 
 .plant img {
@@ -112,10 +119,11 @@ nav a:hover {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 12% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 25%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
+  display: block;
 }
 
 /* Close Button */

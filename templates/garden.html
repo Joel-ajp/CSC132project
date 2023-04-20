@@ -35,7 +35,7 @@ window.onload = function populateGarden() {
     if (data == null) {
         gardenPlants.textContent = "You must add plants to your Garden!"}
     else {
-        gardenPlants.textContent = data
+        data.forEach(displayFunction);
     }
     };
 
