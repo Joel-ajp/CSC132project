@@ -48,7 +48,7 @@ if (event.target == modal) {
 }}
 
 // Function to save the data of the plant 
-function saveData() {
+function addToGarden() {
 let data = {
     plantName: document.getElementById("plantName").innerHTML,
     minTemp: document.getElementById("minTemp").innerHTML,
