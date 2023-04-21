@@ -18,6 +18,16 @@ const PLANTS = [{
     minTemp: "Min Temperature: 321",
     soilMois: "Suggested Soil Moisture: 999"
 
+},
+{
+    id: 2,
+    name: "JP plant",
+    partDes: "re growing it inside, make sure to put it in a spot where it will get plenty of sunlight...",
+    fullDes: "PPP e sure to put it in a spot where it will get plenty of sunlight...South- or west-facing windows are ideal. You'll also need to water your aloe plant regularly, about once per week or when the soil is dry to the touch.",
+    maxTemp: "Max Temperature: 12354",
+    minTemp: "Min Temperature: 77",
+    soilMois: "Suggested Soil Moisture: 123"
+
 }]
 
 // Function to save the data of the plant 
@@ -27,6 +37,7 @@ function addToGarden(id) {
     let data = JSON.parse(localStorage.getItem("myData")) ? JSON.parse(localStorage.getItem("myData")) : [];
 
     data.push({
+        id: data.length,
         plantName: current["name"],
         minTemp: current["minTemp"],
         maxTemp: current["maxTemp"],
@@ -34,4 +45,7 @@ function addToGarden(id) {
     });
     
     localStorage.setItem("myData", JSON.stringify(data));
+    console.log(data)
+    console.log(id)
 }
+

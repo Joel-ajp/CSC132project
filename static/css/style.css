@@ -65,6 +65,26 @@ nav a:hover {
   margin-bottom : 5px;
 }
 
+/* Remove Button Styles */
+.rmbtn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.rmbtn:hover {
+  background-color: #ca6900;
+}
+
+.rmbtn:focus {
+  background-color: #ca6900;
+}
+
 /* Button Styles */
 .btn {
   background-color: var(--primary-color);
@@ -78,6 +98,10 @@ nav a:hover {
 }
 
 .btn:hover {
+  background-color: #4b9d6f;
+}
+
+.btn:focus {
   background-color: #4b9d6f;
 }
 

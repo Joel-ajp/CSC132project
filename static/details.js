@@ -25,6 +25,7 @@ function openModal(plantName) {
     closeModal();
     }}}
 
+// Function to close the detail modal
 function closeModal(plantName) {
 
     //Gets the modal element
