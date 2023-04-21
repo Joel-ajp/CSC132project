@@ -1,6 +1,7 @@
 // Script to open the detail of a plant
 
-function opensModal(plantName) {
+function openModal(plantName) {
+    console.log(plantName)
     //Gets the modal element
     let modal = document.getElementById(plantName);
 
@@ -23,3 +24,12 @@ function opensModal(plantName) {
     if (event.target == modal) {
     closeModal();
     }}}
+
+function closeModal(plantName) {
+
+    //Gets the modal element
+    let modal = document.getElementById(plantName);
+
+    // Sets the display to none when the user clicks on the "x"
+    modal.style.display = "none";
+}
