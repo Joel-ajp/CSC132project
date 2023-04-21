@@ -8,7 +8,7 @@ from flask import Flask, render_template
 import json
 import time
 #import board
-from adafruit_seesaw.seesaw import Seesaw
+# from adafruit_seesaw.seesaw import Seesaw
 from multiprocessing import Process
 
 # The code to get and display the soil moisture and temperature data.
