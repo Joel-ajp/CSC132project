@@ -153,6 +153,7 @@ nav a:hover {
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
   display: block;
+  border-radius: 10px;
 }
 
 /* Close Button */
