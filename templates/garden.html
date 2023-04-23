@@ -25,4 +25,12 @@
     </div>
 </body>
 <script src="{{ url_for('static', filename='garden.js') }}"></script>  
+<script>
+    // Function to remove plant from local storage and Garden page
+    function removeFromGarden(plantName) {
+        toDel = document.getElementById(plantName)
+        toDel.remove()
+        localStorage.removeItem(plantName)
+    }
+    </script>
 </html>
