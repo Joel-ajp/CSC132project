@@ -1,7 +1,8 @@
 
 // Function which populates the plant section of the Garden page
 window.onload = function populateGarden() {
-    let data = JSON.parse(localStorage.getItem("myData"));
+    let ids = localStorage.keys()
+    let data = JSON.parse(localStorage.getItem(ids.forEach()));
     if (data == null) plant.textContent = "You must add plants to your Garden!"
     else {
         data.forEach(e => {

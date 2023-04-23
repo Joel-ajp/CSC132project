@@ -30,11 +30,14 @@ const PLANTS = [{
 
 }]
 
+var totalPlants = []
+
 // Function to save the data of the plant 
 function addToGarden(id) {
+    totalPlants.push(id);
     let current = PLANTS.filter(e => e.id == id)[0]
     console.log(current["name"])
-    let data = JSON.parse(localStorage.getItem("myData")) ? JSON.parse(localStorage.getItem("myData")) : [];
+    let data = JSON.parse(localStorage.getItem(id)) ? JSON.parse(localStorage.getItem(id)) : [];
 
     data.push({
         id: data.length,
@@ -44,7 +47,7 @@ function addToGarden(id) {
         soilMois: current["soilMois"]
     });
     
-    localStorage.setItem("myData", JSON.stringify(data));
+    localStorage.setItem((id), JSON.stringify(data));
     console.log(data)
     console.log(id)
 }
