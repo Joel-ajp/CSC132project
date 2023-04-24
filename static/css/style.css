@@ -195,10 +195,12 @@ nav a:hover {
 .customPlant p {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
-/* .customPlant input[type=text] {
-  width: 100%;
+.customPlant input[type=text] {
+  width: 75%;
+  margin: auto;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -206,10 +208,10 @@ nav a:hover {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;  
-} */
+}
 
-/* .customPlant input[type=text]:focus {
-
-
-
-} */
+.customPlant input[type=text]:focus {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;  
+}
