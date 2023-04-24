@@ -49,3 +49,10 @@ function addToGarden(id) {
     console.log(id)
 }
 
+// Function that saves a custom plant to your garden
+function addCustomPlantToGarden(id) {
+    
+
+
+
+}
