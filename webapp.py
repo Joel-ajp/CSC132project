@@ -4,9 +4,10 @@
 # Description: CSC 132 Final Project
 ######################################################################################################################
 
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template, request
 import json
 import time
+from requests import get, post
 #import board
 # from adafruit_seesaw.seesaw import Seesaw
 from multiprocessing import Process
@@ -87,6 +88,9 @@ def getMoisTemp():
         temperaturePageIndex()
 
         moisData.append((current_time, mois))
+        moisturePageIndex()
+
+
 
         # Prints the data 
         print("temp: " + str(tempData) + "  moisture: " + str(moisData))
