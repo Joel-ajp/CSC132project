@@ -48,7 +48,7 @@ def landingPageIndex():
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
-        
+    
     data = tempData
     labels = [row[0] for row in data]
     values = [row[1] for row in data]
