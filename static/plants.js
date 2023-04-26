@@ -59,7 +59,7 @@ const PLANTS = [{
     soilMois: "Suggested Soil Moisture: 50-60%"
 },
 {
-    name: "Succulents.",
+    name: "Succulents",
     partDes: "Succulents are a type of plant known for their fleshy, water-storing leaves and stems. They come in a variety of shapes and sizes and are popular for their...",
     fullDes: "Succulents are a type of plant known for their fleshy, water-storing leaves and stems. They come in a variety of shapes and sizes and are popular for their unique appearance and low-maintenance care requirementsare known for their ability to store water in their leaves and stems, making them well-suited for dry environments. They come in a range of colors and textures and can be grown both indoors and outdoors.",
     maxTemp: "Max Temperature: 90",
