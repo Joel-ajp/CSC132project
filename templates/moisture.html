@@ -29,7 +29,52 @@
                     <button class="rmbtn" onclick="removePlantFromGarden()">Remove</button>
             </div>
 
-
+            <canvas id="lineChart", height="50", style="padding-left: 10px; padding-right: 10px;"></canvas>
+            <script>
+                // console.log(values | tojson)
+                let ctx = document.getElementById("lineChart").getContext("2d");
+                let lineChart = new Chart(ctx, {
+                    type: "line",
+                    labels: {{labels | safe}},
+                    data: {
+                        datasets: [
+                            {
+                                label: "Moisture from 200 (Very Dry) to 2000 (Very Wet)",
+                                data: {{ moisData | safe }},
+                                fill: false,
+                                borderColor: "rgb(116, 140, 91)",
+                                lineTension: 0.5
+                            }
+                        ]
+                    }
+                });
+                let values = [];
+                let labels = {{labels}};
+                setInterval(()=> {
+                    fetch('/getMois')
+                        .then(response => response.text())
+                        .then(text => values.push(text))
+                    let today = new Date()
+                    console.log(values);
+                    labels.push(today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds())
+                    lineChart.destroy()
+                    lineChart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: "Moisture from 200 (Very Dry) to 2000 (Very Wet)",
+                                data: values,
+                                fill: false,
+                                borderColor: "rgb(116, 140, 91)",
+                                lineTension: 0.5
+                            }
+                        ]
+                    }
+                })
+            }, 7000);
+                </script>
 
 
 </body>

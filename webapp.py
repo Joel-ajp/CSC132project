@@ -31,7 +31,6 @@ def parallelize_functions(*functions):
         p.join()
 
 
-
 # Constants for the webapp
 HOST = "192.168.1.13"
 PORT = 8080
@@ -50,21 +49,25 @@ app = Flask(__name__)
 def landingPageIndex():
     return render_template("index.html")
 
+# Page to fetch the temperature
 @app.route("/getTemp", methods=["GET"])
 def getTemp():
     return jsonify(round(ss.get_temp(),2))
 
+# Page to fetch the moisture
+@app.route("/getMois", methods=["GET"])
+def getTemp():
+    return jsonify(round(ss.get_mois(),2))
+
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
-    e = threading.Event()
-    while not e.wait(5):
-        return render_template("temp.html", tempData=tempData, labels=labels)
+    return render_template("temp.html", tempData=tempData, labels=labels)
 
 # Moisture page function
 @app.route("/moisture")
 def moisturePageIndex():
-    return render_template("moisture.html")
+    return render_template("moisture.html", moisData=moisData, labels=labels)
 
 # Light page function
 @app.route("/garden")
@@ -73,27 +76,27 @@ def lightPageIndex():
 
 
 # A function that gets the temperature of the plant perpetually
-def getMoisTemp():
-    while True:
+# def getMoisTemp():
+#     while True:
 
-        # Reads the current moisture from the sensor
-        mois = ss.moisture_read()
+#         # Reads the current moisture from the sensor
+#         mois = ss.moisture_read()
 
-        # read temperature from the temperature sensor
-        temp = ss.get_temp()
+#         # read temperature from the temperature sensor
+#         temp = ss.get_temp()
 
-        # Adds the data to a dictonary and assigns the new data to the graph
-        tempData.append(str(temp))
+#         # Adds the data to a dictonary and assigns the new data to the graph
+#         tempData.append(str(temp))
 
-        moisData.append(str(mois))
+#         moisData.append(str(mois))
         
-        t = time.localtime()
-        labels.append(str(time.strftime("%H:%M:%S", t)))
+#         t = time.localtime()
+#         labels.append(str(time.strftime("%H:%M:%S", t)))
 
 
-        # Prints the data 
-        print("temp: " + str(tempData) + "  moisture: " + str(moisData))
-        time.sleep(30)
+#         # Prints the data 
+#         print("temp: " + str(tempData) + "  moisture: " + str(moisData))
+#         time.sleep(30)
 
 
 # A function to run the app
@@ -104,6 +107,6 @@ def run_app():
 
 # To run the app
 if __name__ == "__main__":
-    parallelize_functions(getMoisTemp, run_app)
+    # parallelize_functions(getMoisTemp, run_app)
     # app.run(host=HOST,port=PORT,debug=DEBUG)
-    
+    run_app()
