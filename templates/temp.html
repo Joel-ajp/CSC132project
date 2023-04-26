@@ -40,8 +40,8 @@
                         ]
                     }
                 });
-                let values = [200,2000];
-                let labels = {{labels}};
+                let values = [-5,50];
+                let labels = [];
                 setInterval(()=> {
                     fetch('/getTemp')
                         .then(response => response.text())
