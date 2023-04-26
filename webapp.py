@@ -37,8 +37,8 @@ PORT = 8080
 DEBUG = True
 
 # Variables for the different plant variables
-tempData = []
-moisData = []
+tempData = [0,500]
+moisData = [200,2000]
 labels = []
 
 # instantiates the app
