@@ -8,15 +8,15 @@ from flask import Flask, jsonify, render_template, request
 import json
 import time
 from requests import get, post
-#import board
-# from adafruit_seesaw.seesaw import Seesaw
+import board
+from adafruit_seesaw.seesaw import Seesaw
 from multiprocessing import Process
 
 # The code to get and display the soil moisture and temperature data.
 
-#i2c_bus = board.I2C()  # uses board.SCL and board.SDA
+i2c_bus = board.I2C()  # uses board.SCL and board.SDA
 
-#ss = Seesaw(i2c_bus, addr=0x36)
+ss = Seesaw(i2c_bus, addr=0x36)
 
 
 # Helper function to easly  parallelize multiple functions
@@ -49,12 +49,7 @@ def landingPageIndex():
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
-    
-    data = tempData
-    labels = [row[0] for row in data]
-    values = [row[1] for row in data]
-
-    return render_template("temp.html", labels=labels, values=values)
+    return render_template("temp.html", temp=tempData)
 
 # Moisture page function
 @app.route("/moisture")
@@ -71,22 +66,16 @@ def lightPageIndex():
 def getMoisTemp():
     while True:
 
-        # Gets the current time in the proper format
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-
         # Reads the current moisture from the sensor
-        # mois = ss.moisture_read()
-        mois = 0
+        mois = ss.moisture_read()
 
         # read temperature from the temperature sensor
-        # temp = ss.get_temp()
-        temp = 0
+        temp = ss.get_temp()
 
         # Adds the data to a dictonary and assigns the new data to the graph
-        tempData.append((current_time, temp))
+        tempData.append(temp)
 
-        moisData.append((current_time, mois))
+        moisData.append(mois)
         
 
 
