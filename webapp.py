@@ -32,13 +32,13 @@ def parallelize_functions(*functions):
 
 
 # Constants for the webapp
-HOST = "192.168.1.13"
+HOST = "138.47.147.92"
 PORT = 8080
 DEBUG = True
 
 # Variables for the different plant variables
-tempData = [0,500]
-moisData = [200,2000]
+tempData = []
+moisData = []
 labels = []
 
 # instantiates the app
