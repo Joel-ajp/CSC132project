@@ -56,8 +56,8 @@ def getTemp():
 
 # Page to fetch the moisture
 @app.route("/getMois", methods=["GET"])
-def getTemp():
-    return jsonify(round(ss.get_mois(),2))
+def getMois():
+    return jsonify(round(ss.moisture_read(),2))
 
 # Temperature page function
 @app.route("/temp")
