@@ -40,7 +40,7 @@
                         ]
                     }
                 });
-                let values = [];
+                let values = [-5,50];
                 let labels = [];
                 setInterval(()=> {
                     fetch('/getTemp')
@@ -57,8 +57,6 @@
                         datasets: [
                             {
                                 label: "Temperature (In Celcius)",
-                                min: -5,
-                                max: 50,
                                 data: values,
                                 fill: false,
                                 borderColor: "rgb(116, 140, 91)",
