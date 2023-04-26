@@ -30,8 +30,8 @@ def parallelize_functions(*functions):
         p.join()
 
 # Constants for the webapp
-HOST = "localhost"
-PORT = 1234
+HOST = "192.168.1.5"
+PORT = 80
 DEBUG = True
 
 # Variables for the different plant variables
@@ -85,10 +85,9 @@ def getMoisTemp():
 
         # Adds the data to a dictonary and assigns the new data to the graph
         tempData.append((current_time, temp))
-        temperaturePageIndex()
 
         moisData.append((current_time, mois))
-        moisturePageIndex()
+        
 
 
 
