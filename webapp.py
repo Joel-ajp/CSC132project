@@ -4,6 +4,7 @@
 # Description: CSC 132 Final Project
 ######################################################################################################################
 
+import threading
 from flask import Flask, jsonify, render_template, request
 import json
 import time
@@ -29,14 +30,17 @@ def parallelize_functions(*functions):
     for p in processes:
         p.join()
 
+
+
 # Constants for the webapp
-HOST = "192.168.1.5"
-PORT = 80
+HOST = "192.168.1.13"
+PORT = 8080
 DEBUG = True
 
 # Variables for the different plant variables
 tempData = []
 moisData = []
+labels = []
 
 # instantiates the app
 app = Flask(__name__)
@@ -46,10 +50,16 @@ app = Flask(__name__)
 def landingPageIndex():
     return render_template("index.html")
 
+@app.route("/getTemp", methods=["GET"])
+def getTemp():
+    return jsonify(round(ss.get_temp(),2))
+
 # Temperature page function
 @app.route("/temp")
 def temperaturePageIndex():
-    return render_template("temp.html", temp=tempData)
+    e = threading.Event()
+    while not e.wait(5):
+        return render_template("temp.html", tempData=tempData, labels=labels)
 
 # Moisture page function
 @app.route("/moisture")
@@ -73,11 +83,12 @@ def getMoisTemp():
         temp = ss.get_temp()
 
         # Adds the data to a dictonary and assigns the new data to the graph
-        tempData.append(temp)
+        tempData.append(str(temp))
 
-        moisData.append(mois)
+        moisData.append(str(mois))
         
-
+        t = time.localtime()
+        labels.append(str(time.strftime("%H:%M:%S", t)))
 
 
         # Prints the data 
@@ -87,9 +98,12 @@ def getMoisTemp():
 
 # A function to run the app
 def run_app():
-    app.run(debug=DEBUG,host=HOST,port=PORT)
+    # app.run(debug=DEBUG,host=HOST,port=PORT)
+    app.run(debug=DEBUG, host=HOST, port=PORT, ssl_context="adhoc")
+
 
 # To run the app
 if __name__ == "__main__":
-    # parallelize_functions(getMoisTemp, run_app)
-    app.run(host=HOST,port=PORT,debug=DEBUG)
+    parallelize_functions(getMoisTemp, run_app)
+    # app.run(host=HOST,port=PORT,debug=DEBUG)
+    

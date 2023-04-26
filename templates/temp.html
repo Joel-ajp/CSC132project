@@ -27,12 +27,12 @@
                 let ctx = document.getElementById("lineChart").getContext("2d");
                 let lineChart = new Chart(ctx, {
                     type: "line",
+                    labels: {{labels | safe}},
                     data: {
-                        labels: {{ labels | safe }},
                         datasets: [
                             {
                                 label: "Temperature (In Celcius)",
-                                data: {{ values | safe }},
+                                data: {{ tempData | safe }},
                                 fill: false,
                                 borderColor: "rgb(116, 140, 91)",
                                 lineTension: 0.5
@@ -40,14 +40,15 @@
                         ]
                     }
                 });
-                let values = {{values}};
+                let values = [];
                 let labels = {{labels}};
                 setInterval(()=> {
+                    fetch('/getTemp')
+                        .then(response => response.text())
+                        .then(text => values.push(text))
                     let today = new Date()
-                    values.push(Math.floor(Math.random() * 125))
+                    console.log(values);
                     labels.push(today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds())
-                    // values = [125]
-                    console.log(values)
                     lineChart.destroy()
                     lineChart = new Chart(ctx, {
                     type: "line",
@@ -56,7 +57,7 @@
                         datasets: [
                             {
                                 label: "Temperature (In Celcius)",
-                                data: values ,
+                                data: values,
                                 fill: false,
                                 borderColor: "rgb(116, 140, 91)",
                                 lineTension: 0.5
@@ -64,7 +65,7 @@
                         ]
                     }
                 })
-            }, 2000);
+            }, 7000);
                 </script>
 
         <h1>
