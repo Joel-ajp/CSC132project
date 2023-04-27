@@ -42,8 +42,8 @@
                         ]
                     }
                 });
-                let values = [];
-                let labels = {{labels}};
+                let values = [200,1000];
+                let labels = [];
                 setInterval(()=> {
                     fetch('/getMois')
                         .then(response => response.text())
@@ -59,6 +59,8 @@
                         datasets: [
                             {
                                 label: "Moisture from 200 (Very Dry) to 2000 (Very Wet)",
+                                min: 200,
+                                max: 750,
                                 data: values,
                                 fill: false,
                                 borderColor: "rgb(116, 140, 91)",
@@ -67,7 +69,7 @@
                         ]
                     }
                 })
-            }, 7000);
+            }, 5000);
                 </script>
             <h1>
                 Your Garden:

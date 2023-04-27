@@ -32,7 +32,7 @@ def parallelize_functions(*functions):
 
 
 # Constants for the webapp
-HOST = "192.168.1.13"
+HOST = "138.47.147.92"
 PORT = 8080
 DEBUG = True
 
