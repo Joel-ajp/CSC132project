@@ -195,6 +195,7 @@ nav a:hover {
   padding: 1rem;
   width: 500px;
   margin: auto;
+  text-align: center;
 }
 
 .customPlant img {

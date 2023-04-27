@@ -26,13 +26,13 @@
 
     <div class="customPlant">
         <h1 style="text-align: center;">Create Custom Plant:</h1>
-        <p>Enter Custom Plant Name</p>
+        <p style="text-align: center;">Enter Custom Plant Information</p>
         <form aciton="" id="customPlantForm">
         <input type="text", id="plantName" class="customPlant", placeholder="Plant Name">
-        <input type="text", id="plantTempMax" class="customPlant", placeholder="Plant Name">
-        <input type="text", id="plantTempMin" class="customPlant", placeholder="Plant Name">
-        <input type="text", id="plantMois" class="customPlant", placeholder="Plant Name">
-        <button type="submit">Add to Garden</button>
+        <input type="text", id="plantTempMax" class="customPlant", placeholder="Plant's Max Temperature">
+        <input type="text", id="plantTempMin" class="customPlant", placeholder="Plant's Min Temperature">
+        <input type="text", id="plantMois" class="customPlant", placeholder="Plant's Suggested Soil Moisture">
+        <button type="submit", class="btn">Add to Garden</button>
         </form>
 
     </div>
@@ -48,9 +48,40 @@
 
     let customPlantForm = document.getElementById("customPlantForm");
     customPlantForm.addEventListener("submit", (e) => {
-        e.preventDefault()
-        
+        e.preventDefault();
 
+        let data = JSON.parse(localStorage.getItem(e)) ? JSON.parse(localStorage.getItem(e)) : [];
+        let plantName = document.getElementById("plantName");
+        let plantTempMax = document.getElementById("plantTempMax");
+        let plantTempMin = document.getElementById("plantTempMin");
+        let plantMois = document.getElementById("plantMois");
+
+        console.log(plantName.value);
+
+        
+        if (plantName.value == '') {
+            alert("Your Plant Must Have a Name")
+            return;
+        }
+        if (plantTempMax.value == '') {
+            plantTempMax.value = 30
+        }
+        if (plantTempMin.value == '') {
+            plantTempMin.value = 10
+        }
+        if (plantMois.value == '') {
+            plantMois.value = 1000
+        }
+            data.push({
+                plantName: (plantName.value),
+                minTemp: ("Min Temperature: " + plantTempMin.value),
+                maxTemp: ("Max Temperature: " + plantTempMax.value),
+                soilMois: ("Suggested Soil Moisture: " + plantMois.value),
+            });
+
+        localStorage.setItem(plantName.value, JSON.stringify(data));
+
+        window.location.reload()
     })
     </script>
 </html>
