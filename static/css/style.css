@@ -25,10 +25,25 @@ body {
   color: var(--secondary-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--primary-color);
-  font-weight: 700;
-  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 700; 
+  margin-top: 0.5rem; /Edited a bit of the margin who title feels more like in the middle/
+  margin-bottom: 0.25rem;
+
+  /* Add transition for smooth effect */
+  transition: color 0.3s ease, font-size 0.5s ease; / Add transition for font-weight change /
+}
+
+/* Hover effect for the headings, turns green to light green */
+h1:hover,
+h2:hover,
+h3:hover {
+  color: #4b9d6f;
+  font-size: 2.5rem; / Increase font-size on hover */
 }
 
 a {
@@ -114,7 +129,11 @@ nav a:hover {
   margin: 1rem;
   padding: 1rem;
   width: 300px;
-
+ 
+  /*Grid Layout*/
+  display: inline-grid;
+  row-gap: 50px;
+  gap: 10px 5px;
 }
 
 .plant img {

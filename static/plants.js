@@ -1,12 +1,27 @@
 // List of Plant Data
 const PLANTS = [{
-    name: "Snake Plant",
-    partDes: "Sansevieria are evergreen perennials that can grow anywhere from eight inches to 12 feet high. Their sword-like leaves are approximately two feet long...",
-    fullDes: "Sansevieria are evergreen perennials that can grow anywhere from eight inches to 12 feet high. Their sword-like leaves are approximately two feet long. The foliage is stiff, broad, and upright, in a dark green color variegated with white and yellow striping. They are famous for their ability to survive in the most unsuitable growing conditions. They are also renowned for their qualities that help purify the air we breathe. Since they produce oxygen mainly at night, snake plants make for a great bedroom companion.",
-    maxTemp: "Max Temperature: 30",
-    minTemp: "Min Temperature: 5",
-    soilMois: "Suggested Soil Moisture: 50-65%"
-
+        name: "Snake Plant",
+        partDes:
+          "Sansevieria are evergreen perennials that can grow anywhere from eight inches to 12 feet high. Their sword-like leaves are approximately two feet long...",
+        fullDes:
+          "Sansevieria are evergreen perennials that can grow anywhere from eight inches to 12 feet high. Their sword-like leaves are approximately two feet long. The foliage is stiff, broad, and upright, in a dark green color variegated with white and yellow striping. They are famous for their ability to survive in the most unsuitable growing conditions. They are also renowned for their qualities that help purify the air we breathe. Since they produce oxygen mainly at night, snake plants make for a great bedroom companion.",
+        maxTemp: "Max Temperature: 30",
+        minTemp: "Min Temperature: 5",
+        soilMois: "Suggested Soil Moisture: 50-65%",
+    
+        /////Edit////----------------------------------
+        currentTemp: "", // Add a new property to store the current temperature reading
+    
+        updateTemp: function (temp) {
+          this.currentTemp = temp; // Update the current temperature reading
+        },
+        getTempClass: function () {
+          if (this.currentTemp < 5) {
+            return "Below Minimum"; // Return the CSS class for red color if current temperature is below minimum temperature
+          } else {
+            return "Above Minimum"; // Return an empty string if the temperature is above or equal to the minimum temperature
+          }
+        },
 },
 {
     name: "Aloe Vera",
