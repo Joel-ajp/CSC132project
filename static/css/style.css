@@ -31,11 +31,8 @@ h3 {
   color: var(--primary-color);
   text-align: center;
   font-size: 700; 
-  margin-top: 0.5rem; /Edited a bit of the margin who title feels more like in the middle/
+  margin-top: 0.5rem; 
   margin-bottom: 0.25rem;
-
-  /* Add transition for smooth effect */
-  transition: color 0.3s ease, font-size 0.5s ease; / Add transition for font-weight change /
 }
 
 /* Hover effect for the headings, turns green to light green */
@@ -43,7 +40,6 @@ h1:hover,
 h2:hover,
 h3:hover {
   color: #4b9d6f;
-  font-size: 1.5rem;
 }
 
 a {
