@@ -27,12 +27,13 @@
     <div class="customPlant">
         <h1 style="text-align: center;">Create Custom Plant:</h1>
         <p>Enter Custom Plant Name</p>
-        <input type="name", class="customPlant", placeholder="Plant Name">
-        <input type="plantName", class="customPlant", placeholder="Plant Name">
-        <input type="", class="customPlant", placeholder="Plant Name">
-        <input type="text", class="customPlant", placeholder="Plant Name">
-        <input type="button", class="customPlant">
-
+        <form aciton="" id="customPlantForm">
+        <input type="text", id="plantName" class="customPlant", placeholder="Plant Name">
+        <input type="text", id="plantTempMax" class="customPlant", placeholder="Plant Name">
+        <input type="text", id="plantTempMin" class="customPlant", placeholder="Plant Name">
+        <input type="text", id="plantMois" class="customPlant", placeholder="Plant Name">
+        <button type="submit">Add to Garden</button>
+        </form>
 
     </div>
 </body>
@@ -44,5 +45,12 @@
         toDel.remove();
         localStorage.removeItem(plantName);
     }
+
+    let customPlantForm = document.getElementById("customPlantForm");
+    customPlantForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        
+
+    })
     </script>
 </html>
