@@ -19,18 +19,6 @@ i2c_bus = board.I2C()  # uses board.SCL and board.SDA
 
 ss = Seesaw(i2c_bus, addr=0x36)
 
-
-# Helper function to easly  parallelize multiple functions
-def parallelize_functions(*functions):
-    processes = []
-    for function in functions:
-        p = Process(target=function)
-        p.start()
-        processes.append(p)
-    for p in processes:
-        p.join()
-
-
 # Constants for the webapp
 HOST = "0.0.0.0"
 PORT = 8080
@@ -77,12 +65,9 @@ def lightPageIndex():
 
 # A function to run the app
 def run_app():
-    # app.run(debug=DEBUG,host=HOST,port=PORT)
     app.run(debug=DEBUG, host=HOST, port=PORT, ssl_context="adhoc")
 
 
 # To run the app
 if __name__ == "__main__":
-    # parallelize_functions(getMoisTemp, run_app)
-    # app.run(host=HOST,port=PORT,debug=DEBUG)
     run_app()
