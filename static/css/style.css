@@ -52,6 +52,21 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.gardenPlant {
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  padding: 1rem;
+  width: 415px;
+
+  /*Grid Layout*/
+  display: inline-grid;
+  row-gap: 50px;
+  gap: 10px 5px;
+}
+
 .plant-box {
   background-color: white;
   border: 1px solid var(--primary-color);
@@ -132,7 +147,7 @@ nav a:hover {
   border: 1px solid var(--primary-color);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
+  margin: 2rem;
   padding: 1rem;
   width: 300px;
  
