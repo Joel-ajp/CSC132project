@@ -52,6 +52,16 @@ a {
   margin-bottom: 0.5rem;
 }
 
+.plant-box {
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+}
+
 /* Navigation Styles */
 nav {
   background-color: var(--primary-color);
