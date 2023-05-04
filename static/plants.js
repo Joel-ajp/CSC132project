@@ -2,7 +2,7 @@
 const PLANTS = [
   {
     id: 0,
-    name: "Snake Plant",
+    name: "<b>Snake Plant</b>",
     partDes:
       "Sansevieria are evergreen perennials that can grow anywhere from eight inches to 12 feet high. Their sword-like leaves are approximately two feet long...",
     fullDes:
@@ -16,7 +16,7 @@ const PLANTS = [
   },
   {
     id: 1,
-    name: "Aloe Vera",
+    name: "<b>Aloe Vera</b>",
     partDes:
       "Aloe vera can grow indoors and outdoors, but if you're growing it inside, make sure to put it in a spot where it will get plenty of sunlight...",
     fullDes:
@@ -30,7 +30,7 @@ const PLANTS = [
   },
   {
     id: 2,
-    name: "Aglaonema",
+    name: "<b>Aglaonema</b>",
     partDes:
       "Aglaonema, also known as Chinese evergreen, is a popular indoor plant that is prized for its attractive foliage...",
     fullDes:
@@ -44,7 +44,7 @@ const PLANTS = [
   },
   {
     id: 3,
-    name: "Dracaena",
+    name: "<b>Dracaena</b>",
     partDes:
       " Dracaena marginata, also known as the Madagascar dragon tree, is a tall, spiky plant with long, thin leaves that are green with red edges..... ",
     fullDes:
@@ -58,7 +58,7 @@ const PLANTS = [
   },
   {
     id: 4,
-    name: "Philodendrons",
+    name: "<b>Philodendrons</b>",
     partDes:
       "Philodendron plants are a popular choice for indoor gardens due to their attractive foliage and easy care requirements..",
     fullDes:
@@ -72,7 +72,7 @@ const PLANTS = [
   },
   {
     id: 5,
-    name: "Areca palm",
+    name: "<b>Areca palm</b>",
     partDes:
       "The Areca palm, also known as the golden cane palm, is a popular choice for indoor gardens due to its attractive, feathery fronds ...",
     fullDes:
@@ -86,7 +86,7 @@ const PLANTS = [
   },
   {
     id: 6,
-    name: "Spathiphyllum",
+    name: "<b>Spathiphyllum</b>",
     partDes:
       "Spathiphyllum, also known as the peace lily, is a popular indoor plant known for its elegant, white blooms and....",
     fullDes:
@@ -100,7 +100,7 @@ const PLANTS = [
   },
   {
     id: 7,
-    name: "Succulents.",
+    name: "<b>Succulents</b>",
     partDes:
       "Succulents are a type of plant known for their fleshy, water-storing leaves and stems. They come in a variety of shapes and sizes and are popular for their...",
     fullDes:
@@ -114,7 +114,7 @@ const PLANTS = [
   },
   {
     id: 8,
-    name: "Alocasia",
+    name: "<b>Alocasia</b>",
     partDes:
       "Alocasia, commonly known as elephant ears due to the large, broad leaves that resemble elephant ears...",
     fullDes:
@@ -128,7 +128,7 @@ const PLANTS = [
   },
   {
     id: 9,
-    name: "Alocasia",
+    name: "<b>Alocasia</b>",
     partDes:
       "Spider plants, also known as Chlorophytum comosum, are popular indoor plants known for their long, thin leaves that arch gracefully over",
     fullDes:
@@ -142,7 +142,7 @@ const PLANTS = [
   },
   {
     id: 10,
-    name: "English Evy ",
+    name: "<b>English Evy</b>",
     partDes:
       "English ivy, also known as Hedera helix, is a popular indoor plant known for its glossy, green leaves and trailing vines.",
     fullDes:
@@ -156,7 +156,7 @@ const PLANTS = [
   },
   {
     id: 11,
-    name: "Air Plant",
+    name: "<b>Air Plant</b>",
     partDes:
       "Air plants, also known as Tillandsia, are a type of epiphyte, meaning they grow on other plants or objects instead of in soil...",
     fullDes:
@@ -170,7 +170,7 @@ const PLANTS = [
   },
   {
     id: 12,
-    name: "Majesty Palm ",
+    name: "<b>Majesty Palm</b>",
     partDes:
       "Majesty palm, also known as Ravenea rivularis, is a popular indoor palm plant known for its lush, tropical appearance",
     fullDes:
@@ -184,7 +184,7 @@ const PLANTS = [
   },
   {
     id: 13,
-    name: "Pothos Evy  ",
+    name: "<b>Pothos Evy</b>",
     partDes:
       "Pothos, also known as Epipremnum aureum, is a popular indoor plant known for its long, trailing vines with heart-shaped leaves",
     fullDes:
@@ -198,7 +198,7 @@ const PLANTS = [
   },
   {
     id: 14,
-    name: "Pothos Evy  ",
+    name: "<b>Pothos Evy</b>",
     partDes:
       "Pothos, also known as Epipremnum aureum, is a popular indoor plant known for its long, trailing vines with heart-shaped leaves",
     fullDes:
@@ -212,7 +212,7 @@ const PLANTS = [
   },
   {
     id: 15,
-    name: "Amaryllis ",
+    name: "<b>Amaryllis</b>",
     partDes:
       "Amaryllis is a genus of flowering plants native to South America, commonly grown for their large, showy flowers",
     fullDes:
@@ -226,7 +226,7 @@ const PLANTS = [
   },
   {
     id: 16,
-    name: "Emerald Gem  ",
+    name: "<b>Emerald Gem</b>",
     partDes:
       "Emerald Gem is a variety of ZZ plant, also known as Zamioculcas zamiifolia, a popular houseplant that is known for its attractive glossy green leaves.",
     fullDes:
@@ -240,7 +240,7 @@ const PLANTS = [
   },
   {
     id: 17,
-    name: "Emerald Ripple Peperomia",
+    name: "<b>Emerald Ripple Peperomia</b>",
     partDes:
       "Emerald Ripple Peperomia is a popular indoor plant known for its attractive, wavy leaves and compact growth habit...",
     fullDes:
@@ -254,7 +254,7 @@ const PLANTS = [
   },
   {
     id: 18,
-    name: "Fishbone cactus",
+    name: "<b>Fishbone cactus</b>",
     partDes:
       "Fishbone Cactus, also known as Epiphyllum anguliger, is a unique and striking indoor plant known for its long, flat, zig-zagging stems that resemble fishbones.",
     fullDes:
@@ -268,7 +268,7 @@ const PLANTS = [
   },
   {
     id: 19,
-    name: "Fizzle Sizzle",
+    name: "<b>Fizzle Sizzle</b>",
     partDes:
       "Fizzle Sizzle, also known as Albuca spiralis, is an indoor plant that is known for its distinctive spiral-shaped leaves that resemble corkscrews.",
     fullDes:

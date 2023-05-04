@@ -73,10 +73,10 @@
             plantMois.value = 1000
         }
             data.push({
-                plantName: (plantName.value),
-                minTemp: ("Min Temperature: " + plantTempMin.value),
-                maxTemp: ("Max Temperature: " + plantTempMax.value),
-                soilMois: ("Suggested Soil Moisture: " + plantMois.value),
+                plantName: (plantName.value),                
+                minTemp: ("<br><b>Min Temperature:</b> " + `<span style="color: green;">${plantTempMin.value}</span>`),
+                maxTemp: ("<br><b>Max Temperature:</b> " + `<span style="color: green;">${plantTempMin.value}</span>`),
+                soilMois: ("<br><b>Suggested Soil Moisture:</b> " + `<span style="color: green;">${plantMois.value}</span>`),
             });
 
         localStorage.setItem(plantName.value, JSON.stringify(data));
